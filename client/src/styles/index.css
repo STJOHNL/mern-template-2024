@@ -1,0 +1,567 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* GLOBAL */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+:root {
+  /* FONTS */
+  --primary-font: 'Poppins', sans-serif;
+  --title-font: 'Poppins', sans-serif;
+
+  /* COLORS */
+  --color-primary: #0BBFEA;
+  --color-secondary: #B2ACCA;
+  --color-white: #fff;
+  --color-red: #ff3f3f;
+  --color-red-shade: #CC3333;
+  --color-accent: #A60BEA;
+  --color-accent-shade: #8408bb;
+  --color-bg: #f4f7f8;
+  --color-text: #0E1516;
+  --color-text-alt: #080c0d;
+  --color-gray: #cccccc;
+
+  /* SHADOWS */
+  --box-shadow: 0 1px 1px #0000001f, 0 2px 2px #0000001f;
+  --box-shadow-darker: 0 1px 1px #00000014, 0 2px 2px #0000001f, 0 4px 4px #00000029, 0 8px 8px #00000033;
+  --retro-shadow: 0 0 0 2px #0bbfea, 8px 8px 0 0 #0bbfea;
+  --glow: 0px 9px 30px #ff95054d;
+  --inset-shadow: #0000000f 0px 2px 4px 0px inset;
+
+  /* TRANSITIONS */
+  --transition: all 300ms ease;
+
+  /* BORDER RADIUS */
+  --radius-1: 0.3rem;
+  --radius-2: 0.6rem;
+  --radius-3: 1rem;
+  --radius-4: 2rem;
+
+
+  accent-color: var(--color-accent);
+}
+
+#root {
+  position: relative;
+  min-height: 100vh;
+}
+
+body {
+  font-family: var(--primary-font);
+  background-color: var(--color-bg);
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+main {
+  max-width: 1200px;
+  margin: auto;
+  /* Footer height is 2.5rem. 3.5rem gives 1rem space */
+  padding: 1rem 2rem 3.5rem;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+th {
+  color: var(--color-text-alt);
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 2.2rem;
+}
+
+h2 {
+  font-size: 1.9rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+  line-height: 1.25;
+}
+
+h4 {
+  font-size: 1.1rem;
+}
+
+h5 {
+  line-height: 1.4;
+}
+
+img {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+}
+
+.btn {
+  display: inline-block;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  border: none;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--radius-1);
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  transform: scale(1.1);
+}
+
+.btn--primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn--danger {
+  background-color: var(--color-red);
+  color: var(--color-white);
+}
+
+.btn--danger:hover {
+  background-color: var(--color-red-shade);
+  color: var(--color-white);
+}
+
+.btn--subtle {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  transition: var(--transition);
+}
+
+.btn--subtle:hover {
+  background-color: transparent;
+  color: var(--color-accent);
+  transform: none;
+}
+
+/* Use btn--subtle on the wrapper link or button element with btn--icon on the icon element */
+.btn--icon {
+  font-size: 1.25rem;
+}
+
+.btn--icon--danger {
+  color: var(--color-red);
+  font-size: 1.25rem;
+}
+
+.btn--icon--danger:hover {
+  color: var(--color-red-shade);
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* NAVBAR */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+nav {
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+}
+
+.nav--desktop {
+  padding: 0;
+  background-color: var(--color-accent);
+  margin: 1rem auto;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--radius-3);
+  justify-content: center;
+  gap: 2rem;
+}
+
+.nav__link {
+  color: var(--color-white);
+  font-weight: 500;
+  padding: 1rem;
+  border-radius: var(--radius-2);
+}
+
+.nav__link--active {
+  font-weight: 500;
+  color: var(--color-white);
+  border-bottom-color: var(--color-primary);
+  background-color: var(--color-accent-shade);
+}
+
+.nav__link:hover {
+  background-color: var(--color-primary);
+  transition: var(--transition);
+  border-bottom-color: var(--color-white);
+}
+
+.nav__link--active:hover {
+  background-color: var(--color-accent-shade);
+  cursor: default;
+}
+
+nav .btn--subtle {
+  color: var(--color-white);
+}
+
+nav .btn--subtle:hover {
+  color: var(--color-primary);
+}
+
+.nav__dropdown {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-accent-shade);
+  box-shadow: var(--box-shadow);
+  border-radius: 0 0 var(--radius-3) var(--radius-3);
+  position: absolute;
+  margin-top: 1rem;
+}
+
+.nav__dropdown a {
+  font-size: .8rem;
+  white-space: nowrap;
+  background-color: var(--color-accent-shade);
+}
+
+.nav__dropdown a:hover {
+  background-color: var(--color-primary);
+  box-shadow: none;
+}
+
+.nav__logo {
+  max-width: 100px;
+}
+
+.nav__profile__background {
+  background-color: var(--color-accent-shade);
+  box-shadow: var(--box-shadow);
+}
+
+.nav__profile {
+  margin: auto;
+  background-color: var(--color-accent-shade);
+  justify-content: end;
+  padding: 0 2rem;
+  gap: 1.5rem;
+}
+
+.nav__profile .nav__link {
+  color: var(--color-gray);
+  padding: .2rem .5rem;
+}
+
+.nav__profile .nav__link:hover {
+  color: var(--color-primary);
+  background-color: transparent;
+}
+
+.nav__profile .nav__link--active {
+  color: var(--color-secondary);
+}
+
+.nav__profile .nav__link--active:hover {
+  color: var(--color-secondary);
+}
+
+@media screen and (max-width:800px) {
+
+  .nav--mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem .5rem;
+    padding: .7rem 2rem;
+  }
+
+  .nav--mobile .nav__dropdown {
+    right: 0;
+    text-align: right;
+    width: 100vw;
+  }
+
+  .nav__dropdown a {
+    font-size: 1.1rem;
+    white-space: nowrap;
+    margin: .2rem 1rem;
+    border-radius: var(--radius-3);
+    border: none;
+  }
+
+  .nav__hamburger {
+    color: var(--color-accent);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .nav__hamburger:hover {
+    color: var(--color-primary);
+    transform: scale(1.1);
+  }
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* FOOTER */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 2.5rem;
+}
+
+.footer__copyright {
+  text-align: center;
+  background-color: var(--color-accent-shade);
+  padding: 1rem;
+  color: var(--color-white);
+  font-weight: 300;
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* LOADER */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+  backdrop-filter: blur(5px);
+}
+
+.loader__image {
+  width: 15rem;
+  aspect-ratio: 1/1;
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* FORM */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* CKEDITOR */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+@media print {
+  body {
+    margin: 0 !important;
+  }
+}
+
+.editor-container {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ck-content {
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+.editor-container_classic-editor .editor-container__editor {
+  min-width: 795px;
+  max-width: 795px;
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* TABLE */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+table {
+  border: 1px solid var(--color-secondary);
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+
+table tr {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-secondary);
+  padding: .35em;
+}
+
+table th,
+table td {
+  padding: .625em;
+  text-align: center;
+}
+
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  table tr {
+    border-bottom: 3px solid var(--color-secondary);
+    display: block;
+    margin-bottom: .625em;
+  }
+
+  table td {
+    border-bottom: 1px solid var(--color-secondary);
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* CONTAINERS & CARDS */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.container--repeat {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+
+.container--2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.container--3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.container--4 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background-color: var(--color-white);
+  padding: 1rem;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--radius-2);
+}
+
+.card--med {
+  max-width: 800px;
+  margin: auto;
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* MEDIA QUERIES */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+@media screen and (max-width:800px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  h3 {
+    font-size: 1.35rem;
+  }
+
+  .footer__categories {
+    flex-direction: column;
+  }
+}
