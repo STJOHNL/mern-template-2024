@@ -1,5 +1,11 @@
 # Role based auth for MERN Apps
 
+## Features
+- Role-based auth
+- Mailer for password reset
+- File upload
+- Minimal styling
+
 ## Server setup
 
 1. env file with following variables
